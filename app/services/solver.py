@@ -232,6 +232,8 @@ def solve_math(question: str):
     expr = None
     try:
         expr = _prepare_question(work)
+        print("SOLVER INPUT:", repr(original))
+        print("PREPARED EXPR:", repr(expr))
         return _solve_prepared(expr, original)
     except ValueError:
         pass

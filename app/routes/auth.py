@@ -170,7 +170,7 @@ def signup(user: SignupRequest, db: Session = Depends(get_db)):
 
     token = secrets.token_urlsafe(32)
     new_user = User(
-        name=name,
+        name=display,
         email=email,
         password_hash=hash_password(user.password),
         auth_provider="email",

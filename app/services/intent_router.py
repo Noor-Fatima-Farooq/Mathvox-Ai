@@ -67,7 +67,7 @@ Rules:
         if not api_key:
             raise RuntimeError("GROQ_API_KEY is not set")
         client = Groq(api_key=api_key)
-        model = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+        model = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
         completion = client.chat.completions.create(
             model=model,
             messages=[{"role": "user", "content": prompt}],
